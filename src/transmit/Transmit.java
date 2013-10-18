@@ -3,6 +3,7 @@ import java.util.LinkedList;
 
 
 public class Transmit {
+	//генерируем помеху из +-5 вольтового сигнала
 	public static LinkedList<Double> generateSignal(int type,double mul,Integer[] param){
 		LinkedList<Double> res=new LinkedList<>();
 		switch (type){
@@ -23,6 +24,8 @@ public class Transmit {
 		}		
 		return res;
 	}
+	//добавляем к основному сигналу помеху
+	//округляя в каку-либо сторону.
 	public static Integer[] transmit(Integer[] main,LinkedList<Double> add){
 		LinkedList<Integer> res=new LinkedList<>();
 		for(int i=0;i<main.length;i++){
